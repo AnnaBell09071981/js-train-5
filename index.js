@@ -1,14 +1,15 @@
 // Завдання 1: Дано масив, використовуючи цикл "for in" виведіть на консоль всі індекси цього масиву
 function printIndexes(array) {
   for (const i in array) {
-     return array;
+     console.log(i);
   }
   // Проходимося по всіх індексах масиву
   // Виводимо кожен індекс на консоль
 }
 
 console.log("Завдання 1 ====================================");
-console.log("printIndexes([1, 2, 3, 4, 5])", printIndexes([1, 2, 3, 4, 5]));
+// console.log("printIndexes([1, 2, 3, 4, 5])", )
+printIndexes([1, 2, 3, 4, 5]);
 // Виведе
 // 0
 // 1
@@ -67,27 +68,28 @@ console.log("modifyArray([1, two, 3, four, 5])", modifyArray([1, "two", 3, "four
 
 // Завдання 5: Дано масив рядків. За допомогою циклу for переберіть масив, виведіть кожен елемент на консоль у верхньому регістрі.
 function printUppercase(array) {
-  for (const i of array) {
-    return i.toUpperCase();
-  }
-  return array.toUpperCase();
+  for (let i of array) {
+    i = i.toUpperCase();
+    console.log(i);
+  
+}
   // Проходимося по всіх елементах масиву
   // Перетворюємо кожен елемент в верхній регістр та виводимо на консоль
 }
 
 console.log("Завдання 5 ====================================");
-console.log(printUppercase(["one", "two", "three"])); // Виведе ONE TWO THREE
+printUppercase(["one", "two", "three"]); // Виведе ONE TWO THREE
 
 // Завдання 6: Функція приймає деструктуризований масив чисел де буду перший елемент та масив всіх інших.
 // За допомогою циклу for переберіть масив, знайдіть мінімальне та максимальне значення. Результат виведіть на консоль.
 function findMinMax([firstElement, ...restElements]) {
   let min = 1;
-  let max = 2;
-  for (let i = 1; i > 1; i++) {
-    if(firstElement === min) {
-      firstElement[0] = firstElement;
-    } else if(firstElement > max) {
-      firstElement[1] = firstElement;
+  let max = 9;
+  for (let i = 1; i < restElements.length; i++) {
+    if(restElements === min) {
+      console.log(min);
+    } else if(restElements === max) {
+      console.log(max);
     };
     return restElements;
   }
@@ -106,6 +108,7 @@ findMinMax([5, 2, 8, 1, 9, 3]); // Виведе Min: 1 Max: 9
 // Завдання 7: Функція приймає масив рядків.
 // Перетворіть масив в рядок за допомогою методу toString() та повторіть його 2 рази. Результат виведіть на консоль.
 function printStrings(array) {
+  console.log(array.toString().repeat(2));
   // Перетворюємо масив в рядок і видаляемо пробіли та виводимо його на консоль
 }
 
@@ -116,6 +119,9 @@ printStrings([1, "two", 3, "four", 5]); // 1,two,3,four,51,two,3,four,5
 // За допомогою методу toString() перетворіть масив в рядок, та виясніть чи є в цьому рядку підрядок subString .
 
 function concatenateStrings(array, subString) {
+  const arr = array.toString;
+  const subS = subString.toString;
+  console.log(arr, subS);
   // Використовуємо метод toString() для перетворення масиву в рядок
   //Перевіряємо чи містить рядок підрядок
   // Виводимо результат
