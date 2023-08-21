@@ -84,7 +84,6 @@ printUppercase(["one", "two", "three"]); // Виведе ONE TWO THREE
 // За допомогою циклу for переберіть масив, знайдіть мінімальне та максимальне значення. Результат виведіть на консоль.
 function findMinMax([firstElement, ...restElements]) {
   let min = [restElements[firstElement]];
-  console.log(restElements);
   let max = [restElements[firstElement]];
   for (let i = 1; i < restElements.length; i++) {
     if(restElements[i] < min) {
@@ -92,9 +91,9 @@ function findMinMax([firstElement, ...restElements]) {
     } else if(restElements[i] > max) {
       max = restElements[i]; 
     };
-    return restElements[min, max];
+    return (restElements[min, max]);   
   };
-  console.log(restElements[min, max]);
+   console.log(restElements[min, max]);
   // Ініціалізуємо змінні для мінімального та максимального значень, задаємо їм перше значення масиву
   // Перебираємо масив починаючи з другого елементу
   // Перевіряємо, чи поточний елемент менший за мінімальне значення
@@ -192,13 +191,17 @@ console.log(swapMinMax([1, 2, 3, 4, 5]));
 function getEvenNumbers(arr) {
   const testArr = [];
   for (let i = 0; i < arr.length; i++) {
-    let ost = arr[i] % 2;
-    if (ost === 0) {
+   
+    for (let j = 0; j < arr.length; j++) {
+       let ost = arr[i] % 2;
+      if (ost === 0) {
       testArr = arr[i];
     };
-    return [testArr[i]];
+    
   };
-  
+  return [testArr[i]];
+  };
+  console.log(testArr[i]);
   // Створюємо пустий масив для зберігання результату
   // Проходимо через кожен елемент вхідного масиву
   // Перевіряємо чи є число парним
@@ -213,9 +216,10 @@ function multiplyByIndex(arr) {
   let testArr = [];
   for (let i = 0; i < arr.length; i++) {
     testArr = arr[i] * i; 
+    return testArr[i];
   };
-  return testArr;
   
+  console.log(testArr[i]);
   // Створюємо пустий масив для зберігання результату
   // Проходимо через кожен елемент вхідного масиву
   // Помножуємо число на його індекс і додаємо до масиву результату
