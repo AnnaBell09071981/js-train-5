@@ -83,17 +83,17 @@ printUppercase(["one", "two", "three"]); // Виведе ONE TWO THREE
 // Завдання 6: Функція приймає деструктуризований масив чисел де буду перший елемент та масив всіх інших.
 // За допомогою циклу for переберіть масив, знайдіть мінімальне та максимальне значення. Результат виведіть на консоль.
 function findMinMax([firstElement, ...restElements]) {
-  let min = [restElements[firstElement]];
-  let max = [restElements[firstElement]];
-  for (let i = 1; i < restElements.length; i++) {
+  let min = firstElement;
+  let max = firstElement;
+  for (let i = 0; i < restElements.length; i++) {
     if(restElements[i] < min) {
       min = restElements[i];
-    } else if(restElements[i] > max) {
-      max = restElements[i]; 
     };
-    return (restElements[min, max]);   
+    if(restElements[i] > max) {
+      max = restElements[i];
+    };   
   };
-   console.log(restElements[min, max]);
+  console.log("Min:", min, "Max:", max);  
   // Ініціалізуємо змінні для мінімального та максимального значень, задаємо їм перше значення масиву
   // Перебираємо масив починаючи з другого елементу
   // Перевіряємо, чи поточний елемент менший за мінімальне значення
@@ -189,19 +189,13 @@ console.log(swapMinMax([1, 2, 3, 4, 5]));
 
 // Завдання 11: Функція приймає масив чисел. Поверніть новий масив, який містить тільки парні числа з оригінального масиву.
 function getEvenNumbers(arr) {
-  const testArr = [];
-  for (let i = 0; i < arr.length; i++) {
-   
-    for (let j = 0; j < arr.length; j++) {
-       let ost = arr[i] % 2;
-      if (ost === 0) {
-      testArr = arr[i];
+  let testArr = [];
+  for (let i = 0; i < arr.length; i++) {    
+      if (arr[i] % 2 === 0) {
+          testArr = arr[i];     
+        console.log(testArr);
     };
-    
   };
-  return [testArr[i]];
-  };
-  console.log(testArr[i]);
   // Створюємо пустий масив для зберігання результату
   // Проходимо через кожен елемент вхідного масиву
   // Перевіряємо чи є число парним
@@ -216,10 +210,8 @@ function multiplyByIndex(arr) {
   let testArr = [];
   for (let i = 0; i < arr.length; i++) {
     testArr = arr[i] * i; 
-    return testArr[i];
+    console.log(testArr);
   };
-  
-  console.log(testArr[i]);
   // Створюємо пустий масив для зберігання результату
   // Проходимо через кожен елемент вхідного масиву
   // Помножуємо число на його індекс і додаємо до масиву результату
@@ -234,10 +226,11 @@ function replaceNumbers(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > 10) {
       testArr = (arr[i] + "Greater than 10");
-    } else if (arr[i] <= 10) {
+    };
+     if (arr[i] <= 10) {
       testArr = (arr[i] + "Less than or equal to 10");
     };
-    return [testArr[i]];
+    console.log(testArr);
   };
   
  
